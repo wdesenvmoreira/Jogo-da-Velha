@@ -530,7 +530,7 @@ function nivel2() {
 
         let jogadasPossiveis = []
         if (verificarjogadasPossiveis(0, 1, 2) > 0)
-            jogadasPossiveis.push(verificarjogadasPossiveis(0, 1, 2))
+            jogadasPossiveis.push(verificarjogadasPossiveis(0, 1, 2)) //correto 1
 
         if (verificarjogadasPossiveis(0, 2, 1) > 0)
             jogadasPossiveis.push(verificarjogadasPossiveis(0, 2, 1))
@@ -546,6 +546,126 @@ function nivel2() {
 
         if (verificarjogadasPossiveis(0, 8, 4) > 0)
             jogadasPossiveis.push(verificarjogadasPossiveis(0, 8, 4))
+
+        if (verificarjogadasPossiveis(1, 4, 7) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(1, 4, 7)) //correto 2
+
+        if (verificarjogadasPossiveis(1, 7, 4) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(1, 7, 4))
+
+        if (verificarjogadasPossiveis(1, 0, 2) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(1, 0, 2))
+
+        if (verificarjogadasPossiveis(1, 2, 0) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(1, 2, 0))
+
+        if (verificarjogadasPossiveis(2, 5, 8) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(2, 5, 8)) //correto 3
+
+        if (verificarjogadasPossiveis(2, 8, 5) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(2, 8, 5))
+
+        if (verificarjogadasPossiveis(2, 4, 6) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(2, 4, 6))
+
+        if (verificarjogadasPossiveis(2, 6, 4) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(2, 6, 4))
+
+        if (verificarjogadasPossiveis(2, 0, 1) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(2, 0, 1))
+
+        if (verificarjogadasPossiveis(2, 1, 0) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(2, 1, 0))
+
+        if (verificarjogadasPossiveis(3, 4, 5) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(3, 4, 5)) //correto 4
+
+        if (verificarjogadasPossiveis(3, 5, 4) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(3, 5, 4))
+
+        if (verificarjogadasPossiveis(3, 0, 6) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(3, 0, 6))
+
+        if (verificarjogadasPossiveis(3, 6, 0) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(3, 6, 0))
+
+        if (verificarjogadasPossiveis(6, 7, 8) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(6, 7, 8)) //correto 7
+
+        if (verificarjogadasPossiveis(6, 8, 7) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(6, 8, 7))
+
+        if (verificarjogadasPossiveis(6, 4, 2) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(6, 4, 2))
+
+        if (verificarjogadasPossiveis(6, 2, 4) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(6, 2, 4))
+
+        if (verificarjogadasPossiveis(6, 0, 3) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(6, 0, 3))
+
+        if (verificarjogadasPossiveis(6, 3, 0) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(6, 3, 0))
+
+        if (verificarjogadasPossiveis(5, 2, 8) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(5, 2, 8)) //correto 6
+
+        if (verificarjogadasPossiveis(5, 8, 2) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(5, 8, 2))
+
+        if (verificarjogadasPossiveis(5, 3, 4) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(5, 3, 4))
+
+        if (verificarjogadasPossiveis(5, 4, 3) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(5, 4, 3))
+
+        if (verificarjogadasPossiveis(7, 6, 8) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(7, 6, 8)) //corrto 8
+
+        if (verificarjogadasPossiveis(7, 8, 6) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(7, 8, 6))
+
+        if (verificarjogadasPossiveis(7, 4, 1) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(7, 4, 1))
+
+        if (verificarjogadasPossiveis(7, 1, 4) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(7, 1, 4))
+
+        if (verificarjogadasPossiveis(8, 6, 7) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(8, 6, 7)) //correto 9
+
+        if (verificarjogadasPossiveis(8, 7, 6) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(8, 7, 6))
+
+        if (verificarjogadasPossiveis(8, 2, 5) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(8, 2, 5))
+
+        if (verificarjogadasPossiveis(8, 5, 2) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(8, 5, 2))
+
+        if (verificarjogadasPossiveis(4, 0, 8) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 0, 8)) //correto 5.1
+
+        if (verificarjogadasPossiveis(4, 8, 0) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 8, 0))
+
+        if (verificarjogadasPossiveis(4, 1, 7) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 1, 7)) //correto 5.2
+
+        if (verificarjogadasPossiveis(4, 7, 1) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 7, 1))
+
+        if (verificarjogadasPossiveis(4, 2, 6) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 2, 6)) //correto 5.3
+
+        if (verificarjogadasPossiveis(4, 6, 2) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 6, 2))
+
+        if (verificarjogadasPossiveis(4, 3, 5) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 3, 5)) //correto 5.4
+
+        if (verificarjogadasPossiveis(4, 5, 3) > 0)
+            jogadasPossiveis.push(verificarjogadasPossiveis(4, 5, 3))
 
 
 
