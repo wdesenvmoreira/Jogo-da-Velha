@@ -16,7 +16,7 @@ let game = {
         empates: 0
     },
     numJogadas: 0,
-    nivel: 1,
+    nivel: 0,
     multiplayer: false
 }
 
@@ -363,6 +363,7 @@ function iniciar() {
         game.iniciado = true
         game.iniciante = game.turno
         game.finalizado = false
+        game.nivel = document.getElementById('nivel').value
         game.numJogadas = 0
         game.placar.empates = 0
         document.getElementById('placarMenu2').innerHTML = 0
