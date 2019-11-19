@@ -363,9 +363,13 @@ function iniciar() {
         game.iniciado = true
         game.iniciante = game.turno
         game.finalizado = false
-        game.nivel = document.getElementById('nivel').value
+        game.nivel = parseInt(document.getElementById('nivel').value)
         game.numJogadas = 0
         game.placar.empates = 0
+        let multiplayer = document.getElementById('multiplayer').value
+        if (multiplayer == 'multiplayer') {
+            game.multiplayer = true
+        }
         document.getElementById('placarMenu2').innerHTML = 0
         document.getElementById('placarMenu1').innerHTML = 0
 
@@ -667,78 +671,6 @@ function nivel2() {
 
         if (verificarjogadasPossiveis(4, 5, 3) > 0)
             jogadasPossiveis.push(verificarjogadasPossiveis(4, 5, 3))
-
-
-
-
-        // if (gameJogadas[0] == Jogador2.simbolo) {
-        //     if (!gameJogadas[1]) {
-        //         if (gameJogadas[2] == jogador2.simbolo || !gameJogadas[2])
-        //             jogadasPossiveis.push(2)
-        //     }
-
-        //     if (!gameJogadas[2]) {
-        //         if (gameJogadas[1] == jogador2.simbolo || !gameJogadas[1])
-        //             jogadasPossiveis.push(3)
-        //     }
-
-        //     if (!gameJogadas[3]) {
-        //         if (gameJogadas[6] == jogador2.simbolo || !gameJogadas[6])
-        //             jogadasPossiveis.push(4)
-        //     }
-
-        //     if (!gameJogadas[6]) {
-        //         if (gameJogadas[3] == jogador2.simbolo || !gameJogadas[3])
-        //             jogadasPossiveis.push(7)
-        //     }
-
-        //     if (!gameJogadas[4]) {
-        //         if (gameJogadas[8] == jogador2.simbolo || !gameJogadas[8])
-        //             jogadasPossiveis.push(5)
-        //     }
-
-        //     if (!gameJogadas[8]) {
-        //         if (gameJogadas[4] == jogador2.simbolo || !gameJogadas[4])
-        //             jogadasPossiveis.push(9)
-        //     }
-
-
-
-        // }
-
-
-
-
-
-
-        // Verificando jogadas da posição 1
-        if (listaPosicoes[0]) {
-            if (verificarPosicao(2)) {
-                if (verificarPosicao(3)) {
-                    executarJogadaComputador(2)
-                }
-            }
-        }
-
-
-
-        for (let index = 0; index < 8; index++) {
-            if (listaPosicoes[i]) {
-
-            }
-
-        }
-
-
-
-
-        var randomItem = posicoes()[Math.floor(Math.random() * posicoes.length)]
-
-
-        var p = randomItem.toString()
-
-
-
 
         finaliza()
     }
