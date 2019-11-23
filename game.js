@@ -1,5 +1,6 @@
 let Jogador1
 let Jogador2
+let corJ1, corJ2
 let game = {
     iniciado: false,
     finalizado: false,
@@ -18,6 +19,26 @@ let game = {
 
 const celula = document.querySelectorAll('.celula')
 
+function escolhaCor(corescolhida,bt){
+    if (bt=='btcorJ1'){
+        if (corJ2 != corescolhida){
+            corJ1 = corescolhida
+            document.getElementById(bt).style.backgroundColor = corescolhida
+        }else{
+            alert("Essa cor já foi escolhida. ")
+        }
+    }
+    if (bt=='btcorJ2'){
+        if (corJ1 != corescolhida){
+            corJ2 = corescolhida
+            document.getElementById(bt).style.backgroundColor = corescolhida
+        }else{
+            alert("Essa cor já foi escolhida. ")
+        }
+    }
+    
+}
+
 
 
 celula.forEach(function (element, index) {
@@ -29,7 +50,7 @@ celula.forEach(function (element, index) {
             if (verificarPosicao(this.id)) {
                 if (game.turno == Jogador1.vez) {
                     marcar(1, parseInt(this.id))
-                    this.style.backgroundColor = "chartreuse"
+                    this.style.backgroundColor = Jogador1.cor
                     this.innerHTML = Jogador1.simbolo
                     document.getElementById('vezMenu2').innerHTML = 'Sua vez!'
                     document.getElementById('vezMenu2div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)';
@@ -47,7 +68,7 @@ celula.forEach(function (element, index) {
                     if (game.multiplayer) {
 
                         marcar(2, parseInt(this.id))
-                        this.style.backgroundColor = 'yellow'
+                        this.style.backgroundColor = Jogador2.cor
                         this.innerHTML = Jogador2.simbolo
                         document.getElementById('vezMenu1').innerHTML = 'Sua vez!'
                         document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)';
@@ -285,8 +306,9 @@ function verificarPosicao(posicao) {
 function criarJogador1() {
     let nic = document.getElementById('nick1').value
     let simbol = document.getElementById('simbolo1').value
+    cor = corJ1
     if (Jogador1 == undefined) {
-        Jogador1 = new Jogador(nic, 0, simbol)
+        Jogador1 = new Jogador(nic, 0, simbol, cor)
 
     } else {
         alert('Jogador1 ja informado!!!')
@@ -295,8 +317,9 @@ function criarJogador1() {
 function criarJogador2() {
     let nic = document.getElementById('nick2').value
     let simbol = document.getElementById('simbolo2').value
+    cor = corJ2
     if (Jogador2 == undefined) {
-        Jogador2 = new Jogador(nic, 0, simbol)
+        Jogador2 = new Jogador(nic, 0, simbol,cor)
     } else {
         alert('Jogador2 ja informado!!!')
     }
@@ -361,11 +384,21 @@ function iniciar() {
         game.finalizado = false
         game.numJogadas = 0
         game.placar.empates = 0
+        // let nivel
+        // nivel = document.getElementById('nivel').value
+        game.nivel =parseInt(document.getElementById('nivel').value)
         document.getElementById('placarMenu2').innerHTML = 0
         document.getElementById('placarMenu1').innerHTML = 0
-        game.nivel = document.getElementById('nivel').value
+       
+         if(document.getElementById('multiplayer').value == 'computador')
+            {
+                game.multiplayer = false
+                if (game.nivel == 0 )
+                game.nivel = 1
+            }
+            else{game.multiplayer = true}
 
-        if (game.turno == Jogador2.vez) {
+        if (game.turno == Jogador2.vez && !game.multiplayer) {
             jogadaComputador()
         }
     }
@@ -460,10 +493,10 @@ function nivel1() {
 
     if (game.turno == Jogador2.vez) {
         marcar(2, randomItem)
-        document.getElementById(p).style.backgroundColor = 'yellow'
+        document.getElementById(p).style.backgroundColor = Jogador2.cor
         document.getElementById(p).innerHTML = Jogador2.simbolo
         document.getElementById('vezMenu1').innerHTML = 'Sua vez!'
-        document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)';
+        document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)'
         document.getElementById('vezMenu1div').style.boxShadow = '0 4px 8px 0 rgba(6, 236, 64, 0.712), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
         document.getElementById('vezMenu2').innerHTML = 'Aguarde!'
         document.getElementById('vezMenu2div').style.backgroundColor = 'rgba(247, 0, 0, 0.712)'
@@ -671,10 +704,10 @@ var randomItem
     console.log('p',p)
     if (game.turno == Jogador2.vez) {
         marcar(2, randomItem)
-        document.getElementById(p).style.backgroundColor = 'yellow'
+        document.getElementById(p).style.backgroundColor = Jogador2.cor
         document.getElementById(p).innerHTML = Jogador2.simbolo
         document.getElementById('vezMenu1').innerHTML = 'Sua vez!'
-        document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)';
+        document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)'
         document.getElementById('vezMenu1div').style.boxShadow = '0 4px 8px 0 rgba(6, 236, 64, 0.712), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
         document.getElementById('vezMenu2').innerHTML = 'Aguarde!'
         document.getElementById('vezMenu2div').style.backgroundColor = 'rgba(247, 0, 0, 0.712)'
@@ -830,10 +863,10 @@ function jogadaVencedoraJogador1(){
 function executarJogadaComputador(posicao) {
     if (game.turno == Jogador2.vez) {
         marcar(2, posicao)
-        document.getElementById(p).style.backgroundColor = 'yellow'
+        document.getElementById(p).style.backgroundColor = Jogador2.cor
         document.getElementById(p).innerHTML = Jogador2.simbolo
         document.getElementById('vezMenu1').innerHTML = 'Sua vez!'
-        document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)';
+        document.getElementById('vezMenu1div').style.backgroundColor = 'rgba(6, 236, 64, 0.712)'
         document.getElementById('vezMenu1div').style.boxShadow = '0 4px 8px 0 rgba(6, 236, 64, 0.712), 0 6px 20px 0 rgba(0, 0, 0, 0.19)';
         document.getElementById('vezMenu2').innerHTML = 'Aguarde!'
         document.getElementById('vezMenu2div').style.backgroundColor = 'rgba(247, 0, 0, 0.712)'

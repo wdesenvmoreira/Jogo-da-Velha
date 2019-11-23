@@ -1,9 +1,10 @@
 class Jogador {
-    constructor(nick, vez, simbolo) {
+    constructor(nick, vez, simbolo, cor) {
         this.nick = nick
         this.vez = vez
         this.simbolo = simbolo
         this.jogadas = [[, ,], [, ,], [, ,]]
+        this.cor = cor
     }
 
     setJogada(i, j) {
